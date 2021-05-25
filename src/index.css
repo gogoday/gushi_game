@@ -22,5 +22,19 @@ code {
 
 .content div {
   letter-spacing: 15px;
-  line-height: 30px;
+  line-height: 40px;
+}
+.tips {
+  font-size: 15px;
+  margin: 20px;
+}
+.words {
+  display: flex;
+}
+.words div {
+  margin: 10px;
+  cursor: pointer;
+}
+.op button {
+  margin: 10px;
 }
