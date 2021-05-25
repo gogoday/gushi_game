@@ -4,6 +4,7 @@ import './App.css';
 
 function App() {
   const [data, setData] = useState({"author":"元礎","paragraphs":["寺隔*潮去","採*過泉聲","林塘*半宿","風*夜深來"],"title":"逸句","wrongSort":["秋","藥","殘","雨"]});
+  const [newQ, setNewQ] = useState(false);
   let oriData = useRef({});
   let selectWord = useRef([]);
   useEffect(() => {
@@ -20,7 +21,7 @@ function App() {
         setData(data);
       }
     })
-  }, [])
+  }, [newQ])
 
   const select = (word) => {
     selectWord.current.push(word)
@@ -41,9 +42,14 @@ function App() {
     console.log('reset ..')
     console.log(oriData.current)
     setData(oriData.current);
+    selectWord.current = [];
   }
 
   const submit = () => {
+    if (selectWord.current.length === 0) {
+      alert('未答题')
+      return;
+    }
     console.log(selectWord.current);
     fetch('https://hello-cloudbase-1gjrribi96ea328d-1251036730.ap-shanghai.app.tcloudbase.com/check', {
       method: 'post',
@@ -56,6 +62,10 @@ function App() {
     .then(data => {
       console.log(data);
     })
+  }
+  const getData = () => {
+    setNewQ(!newQ);
+    selectWord.current = [];
   }
   return (
     <div className="App">
@@ -87,6 +97,7 @@ function App() {
         <div className="op">
           <button onClick={reset}>重新选择</button>
           <button onClick={submit}>提交答案</button>
+          <button onClick={getData}>换一提</button>
         </div>
         
       </header>
