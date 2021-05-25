@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.title {
+  line-height: 60px;
+}
+.author {
+  font-size: 15px;
+  margin-bottom: 20px;
+}
+
+.content div {
+  letter-spacing: 15px;
+  line-height: 30px;
+}
