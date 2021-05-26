@@ -79,7 +79,7 @@ function App() {
     setShowLoading(true);
     fetch('https://hello-cloudbase-1gjrribi96ea328d-1251036730.ap-shanghai.app.tcloudbase.com/check', {
       method: 'post',
-      body: JSON.stringify(body),
+      body,
       headers: {
         'Content-Type': 'application/json'
       }
