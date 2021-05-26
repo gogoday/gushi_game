@@ -49,8 +49,9 @@ function App() {
     const cloneData = JSON.parse(JSON.stringify(data));
     for (let i = 0, l = cloneData.paragraphs.length; i < l; i++) {
       const item = cloneData.paragraphs[i];
-      if (item.indexOf('*') >= 0) {
-        cloneData.paragraphs[i] = item.replace('*', word);
+      const hasStart = item.split('').filter(item => item === '*');
+      if (hasStart.length === 1) {
+        cloneData.paragraphs[i] = item.replace('*', `*${word}*`);
         cloneData.wrongSort = cloneData.wrongSort.filter(wordItem => wordItem !== word);
         break;
       }
@@ -91,6 +92,7 @@ function App() {
       const { ret } = data;
       if (ret === 4) {
         alert('答案错误，请重新选择')
+        reset();
       } else if (ret === 0) {
         alert('恭喜你，答案正确')
         setNewQ(!newQ);
@@ -106,15 +108,31 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h3>填古诗</h3>
+        <h3>填诗词</h3>
         <div className="title">{data.title}</div>
         <div className="author">作者：{data.author}</div>
         <div className="content">
         {
           data.paragraphs && data.paragraphs.map((item, index) => {
-            return (
-              <div key={index}>{item}</div>
-            )
+            const words = item.split('*');
+            if (words.length > 2) {
+              return (
+                <div>
+                  <span key={`${index}-1`}>{words[0]}</span>
+                  <span key={`${index}-2`} className="delete-word">{words[1]}</span>
+                  <span key={`${index}-3`}>{words[2]}</span>
+                </div>
+              )
+            } else {
+              return (
+                <div>
+                  <span key={`${index}-1`}>{words[0]}</span>
+                  <span key={`${index}-2`} className="delete-word">？</span>
+                  <span key={`${index}-3`}>{words[1]}</span>
+                </div>
+              )
+            }
+            
           })
         }
         </div>

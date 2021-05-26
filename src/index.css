@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: cursive, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -14,8 +14,10 @@ code {
 
 .title {
   line-height: 60px;
+  font-size: 30px;
 }
 .author {
+  font-family: 'Courier New', Courier, monospace;
   font-size: 15px;
   margin-bottom: 20px;
 }
@@ -23,13 +25,19 @@ code {
 .content div {
   letter-spacing: 15px;
   line-height: 40px;
+  text-align: justify;
+  text-align-last: justify;
+  font-size: 30px;
 }
 .tips {
+  font-family: 'Courier New', Courier, monospace;
   font-size: 15px;
   margin: 20px;
 }
 .words {
   display: flex;
+  height: 68px;
+  font-size: 30px;
 }
 .words div {
   margin: 10px;
@@ -65,4 +73,7 @@ code {
 
 .show-flex {
   display: flex;
+}
+.delete-word {
+  color: red;
 }
