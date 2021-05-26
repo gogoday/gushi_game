@@ -77,3 +77,18 @@ code {
 .delete-word {
   color: red;
 }
+
+.record {
+  width: 200px;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  background: #414141;
+  color: wheat;
+  opacity: 0.5;
+  display: none;
+}
+
+.show {
+  display: block;
+}
