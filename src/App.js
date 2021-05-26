@@ -15,7 +15,15 @@ function App() {
   let selectWord = useRef([]);
   useEffect(() => {
     async function fetchData() {
-      const result = await fetch('https://hello-cloudbase-1gjrribi96ea328d-1251036730.ap-shanghai.app.tcloudbase.com/getwords')
+      const result = await fetch('https://hello-cloudbase-1gjrribi96ea328d-1251036730.ap-shanghai.app.tcloudbase.com/getwords', {
+        method: 'post',
+        body: JSON.stringify({
+          userId: getCookie('user-id')
+        }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
       // console.log(result.json());
       return result.json();
     }
@@ -56,10 +64,14 @@ function App() {
       alert('未答题')
       return;
     }
+    const body = JSON.stringify({
+      select: selectWord.current,
+      userId: getCookie('user-id'),
+    })
     console.log(selectWord.current);
     fetch('https://hello-cloudbase-1gjrribi96ea328d-1251036730.ap-shanghai.app.tcloudbase.com/check', {
       method: 'post',
-      body: JSON.stringify(selectWord.current),
+      body: JSON.stringify(body),
       headers: {
         'Content-Type': 'application/json'
       }
