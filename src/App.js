@@ -1,6 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import lodash from 'lodash';
 import './App.css';
+import { getCookie, setCookie } from './util';
+
+const userId = getCookie('user-id');
+if (!userId) {
+  setCookie('user-id', `${Date.now()}-${Math.random()}`);
+}
 
 function App() {
   const [data, setData] = useState({"author":"元礎","paragraphs":["寺隔*潮去","採*過泉聲","林塘*半宿","風*夜深來"],"title":"逸句","wrongSort":["秋","藥","殘","雨"]});
