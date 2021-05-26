@@ -38,3 +38,31 @@ code {
 .op button {
   margin: 10px;
 }
+
+.loading-bg {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  /* opacity: 0.2; */
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+
+.loading {
+  width: 200px;
+  height: 100px;
+  background-color: rgb(221, 204, 204);
+  /* opacity: 0.8; */
+  /* z-index: 100; */
+  text-align: center;
+  line-height: 100px;
+}
+
+.show-flex {
+  display: flex;
+}
