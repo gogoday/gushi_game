@@ -1,17 +1,21 @@
-# React 示例
+#2021 TCBC 云开发技术竞赛#-填古诗小游戏-no1
 
-参考文档：https://docs.cloudbase.net/quick-start/web/react.html
+静态网站源码
 
-## 手工部署
+团队/作者简介
+sampsonwang cmweb成员 喜欢用前端相关技术解决各种问题
 
-在此目录下运行：
+作品介绍
+本作品是基于古诗词的一款小游戏。将随机一首古诗，每句取一个字打乱顺序，玩家根据古诗语境恢复古诗。
 
-```
-cloudbase framework deploy -e <your-env-id>
-```
 
-## 一键部署
+功能模块介绍（内容叙述形式不限，建议图文并茂，越完整分数越高哦）：
+1 用户端拉取题目数据
+2 服务端随机获取一首古诗，并删除部分字符，作为题目，并把题目保存到数据库
+3 用户根据古诗语境，恢复古诗
+4 用户提交答案
+5 服务端拉取数据信息，check答案，并返回给用户端。
 
-点击下方按钮一键部署：
+作品体验：
+https://hello-cloudbase-1gjrribi96ea328d-1251036730.tcloudbaseapp.com/index.html
 
-[![](https://main.qcloudimg.com/raw/67f5a389f1ac6f3b4d04c7256438e44f.svg)](https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2Fgogoday%2Fgushi_game&workDir=/&branch=master)
